@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* BLOQUE: pricing */
+.pricing {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ELEMENTO: contenedor de tarjetas */
+.pricing__cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ELEMENTO: tarjeta individual */
+.pricing__card {
+    background-color: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 24px;
+    width: calc(33.33% - 20px);
+    /* Divide el espacio en 3 partes iguales */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Modificador: tarjeta destacada */
+.pricing__card--highlighted {
+    border-color: #007bff;
+    background-color: #f8fdff;
+    position: relative;
+}
+
+.pricing__badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* ELEMENTO: título de la tarjeta */
+.pricing__card-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0 0 12px;
+}
+
+/* ELEMENTO: precio */
+.pricing__price {
+    display: block;
+    font-size: 1.5rem;
+    color: #333;
+    margin: 16px 0;
+    font-weight: 600;
+}
+
+/* ELEMENTO: lista de características */
+.pricing__features {
+    list-style: none;
+    margin: 20px 0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.pricing__feature {
+    margin-bottom: 8px;
+}
+
+.pricing__feature::before {
+    content: "✓";
+    color: #007bff;
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+/* ELEMENTO: botón */
+.pricing__button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Modificador: botón primario */
+.pricing__button--primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.pricing__button--primary:hover {
+    background-color: #0056b3;
+}
+
+/* Modificador: botón outline */
+.pricing__button--outline {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.pricing__button--outline:hover {
+    background-color: #e3f2fd;
+}
+
+/* Responsive: en pantallas pequeñas, apilar tarjetas verticalmente */
+@media (max-width: 768px) {
+    .pricing__cards {
+        flex-direction: column;
+    }
+
+    .pricing__card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
